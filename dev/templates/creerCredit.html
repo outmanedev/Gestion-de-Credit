@@ -1,0 +1,69 @@
+{% extends 'adminhome.html' %}
+
+{% block main %}
+  <div class="container"> 
+    <h1 class="mt-4 mb-4">Créer Crédits</h1>
+    <div class="row justify-content-between">
+      <div class="card mb-4 col-md-3 bg-warning">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Clients</h5>
+          <h1 class="display-10">{{ clients.count }}</h1>
+        </div>
+
+      </div>
+      <div class="card mb-4 col-md-3 bg-success">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Produits</h5>
+          <h1 class="display-10">{{ produits.count }}</h1>
+        </div>
+      </div>
+      <div class="card mb-4 col-md-3 bg-info">
+        <div class="card-body text-center">
+          <h5 class="card-title">Total Crédits</h5>
+        <h1> {{ sumCredit }}</h1>
+        </div>
+      </div>
+    </div>
+ <!--creer credit-->   
+ <div class="d-flex justify-content-center align-items-center">
+  <div class="col-md-6">
+    <div class="card shadow">
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group col">
+            <label for="client" style="font-weight:bold;">Client:</label>
+            <select name="client" class="form-control">
+              {% for client in clients %}
+              <option value="{{ client.id }}">{{ client.name }} {{client.prenom}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col mt-3">
+            <label for="produit" style="font-weight:bold;">Produit:</label>
+            <select name="produit" class="form-control">
+              {% for produit in produits %}
+              <option value="{{ produit.id }}">{{ produit.name }} {{produit.prix}} DH</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group col">
+            <label for="quantite" style="font-weight:bold;">Quantity:</label>
+            <input type="number" name="quantite" min="1" required class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Créer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--messages-->
+  {% if messages %}
+  <div id="message" class="alert alert-success" role="alert">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+{% endblock %}

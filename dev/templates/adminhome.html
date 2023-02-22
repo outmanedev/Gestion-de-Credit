@@ -1,0 +1,94 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"ntegrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}">
+    
+
+    
+</head>
+<body>
+<!-- navbar start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'creerCredit' %}">Page d'Acceuil</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Gestion des produits
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'add_produit' %}">Ajouter Produit</a>
+                    <a class="dropdown-item" href="{% url 'afficherProduit' %}">Afficher produit</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Gestion des Clients
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'add_client' %}">Ajouter client</a>
+                    <a class="dropdown-item" href="{%url 'client_list'%}"> liste des Clients</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Gestion des Crédits
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{%url 'credits_list'%}">  liste des crédits</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin-change-password/">Changement de Mot de pass</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'admin_login'%}">Se déconnecter</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--vertical navbar end-->
+<!--page content holder-->
+<div class="page-content p-4" id="content">
+   <!--th--> <a href="" title="logout" class="float-right text-white"><i class="fas fa-sign-out-alt fa-2x"></i></a><!--th-->
+</div>
+<!--end page content holder-->
+ <!--search bar-->
+ <div class="container-fluid">
+    <div class="d-flex justify-content-start">
+      <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="" name="q" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="Enregistrer">Rechercher</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/myjs.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% block main %}
+    {% endblock %}
+</div>
+
+ 
+<!--end page content holder-->
+</body>
+</html>
+
+</div>
+<!--end page content holder-->
+</body>
+</html>

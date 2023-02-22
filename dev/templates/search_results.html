@@ -1,0 +1,27 @@
+{% extends 'adminhome.html' %}
+
+{% block content %}
+  <h1>Search Results</h1>
+
+  <h2>Clients</h2>
+  {% if client_results %}
+    <ul>
+      {% for client in client_results %}
+        <li><a href="{% url 'client_list' client.id %}">{{ client.name }} {{ client.prenom }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No clients found.</p>
+  {% endif %}
+
+  <h2>Products</h2>
+  {% if produit_results %}
+    <ul>
+      {% for produit in produit_results %}
+        <li><a href="{% url 'afficherProduit' produit.id %}">{{ produit.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No products found.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'adminhome.html' %}
+
+{% block main %}
+<div class="card shadow">
+  <div class="card-body">
+    <h5 class="p-2" style="border-bottom: 2px solid orange;">liste des Crédits</h5>
+    <div class="container-fluid">
+      <table class="table table-bordered table-sm" id="example">
+        <thead>
+          <tr>
+            <th>ID.</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Crédits</th>
+            <th>Date</th>
+            <th>Action</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for client in client_list %}
+            <tr>
+             <td>{{ client.id }}</td>
+            <td>{{ client.name }}</td>
+            <td>{{ client.prenom }}</td>
+            <td>{{ client.credits }}</td>
+            <td>{{ client.date_creation }}</td>
+              <td>
+                <div class="btn-group form-group form-inline btn-group-justified" role="group">
+                  <form method="POST" action="{% url 'edit_credits' client.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn m-3 btn-success d-inline-block form-group" onclick="#'">Modifier Crédits</button>
+                  </form>
+                </div>
+              </td>
+              <td>
+                {% if client.credits < 1000 %}
+                  <span class="text-success font-weight-bold">Moins Risqué</span>
+                {% elif client.credits >= 1000 and client.credits < 1500 %}
+                  <span class="text-warning font-weight-bold">Risqué</span>
+                {% else %}
+                  <span class="text-danger font-weight-bold">Trop Risqué</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+  .text-success {
+    color: green;
+  }
+  .text-danger {
+    color: red;
+  }
+</style>
+
+{% endblock %}

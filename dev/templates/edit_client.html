@@ -1,0 +1,40 @@
+{% extends 'adminhome.html' %}
+
+{% block main %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Edit Client</h5>
+        <div class="container-fluid">
+            <form action="{% url 'edit_client' client_id=client.id %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-row">
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Nom </label>
+                            <input type="text" name="name" class="form-control" value="{{ client.name }}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" name="prenom" class="form-control" value="{{ client.prenom }}" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Télephone</label>
+                            <input type="text" name="telephone" class="form-control" value="{{ client.telephone }}" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Enregistrer" class="m-2 px-3 btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

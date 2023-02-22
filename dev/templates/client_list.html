@@ -1,0 +1,46 @@
+{% extends 'adminhome.html' %}
+
+{% block main %}
+<div class="card shadow">
+  <div class="card-body">
+    <h5 class="p-2" style="border-bottom: 2px solid orange;">liste des Clients</h5>
+    <div class="container-fluid">
+      <table class="table table-bordered table-sm" id="example">
+        <thead>
+          <tr>
+            <th>ID.</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Telephone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in clients %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.prenom }}</td>
+            <td>{{ i.telephone}}</td>
+            <td>
+              <div class="btn-group form-group form-inline btn-group-justified" role="group">
+
+                <form method="POST" action="{% url 'delete_client' i.id %}">
+                  {% csrf_token %}
+                  <button type="submit" class="btn m-3 btn-danger d-inline-block form-group" onclick="return confirm('Voulez-vous vraiment supprimer?')">Supprimer</button>
+                </form>
+                <form method="POST" action="{% url 'edit_client' client_id=i.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn m-3 btn-success d-inline-block form-group" onclick="#')">Modifier</button>
+                </form>
+                
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

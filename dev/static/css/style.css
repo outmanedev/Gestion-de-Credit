@@ -1,0 +1,87 @@
+/* Change Brand Font */
+
+
+
+.messages .success {
+  color: green
+}
+
+.navbar-brand{
+  font-family: 'Monotype Corsiva';
+  font-size: 35px;
+  font-weight: bold;
+}
+/* Change Navigation Color */
+.nav-link,.dropdown-item{
+  color: black !important;
+  font-size : 20px
+}
+.nav-link:hover{
+  color: green !important;
+  background-color : orange;
+  border-radius : 30px;
+}
+
+/* Change Footer Social Icon Color */
+#footer a,#contact a{
+  color:  #EE1D29;
+}
+#footer a:hover {
+  color: yellow;
+}
+
+#contact a:hover {
+  color: blue;
+}
+
+
+/*scroll button start*/
+#scrollbtn
+{
+
+position:fixed;
+bottom:20px;
+right:40px;
+z-index:99;
+border:none;
+color:red;
+background:#ffc400;
+padding:10px;
+border-radius:10px;
+}
+/*scroll button end*/
+
+html{
+scroll-behavior:smooth;
+}
+
+#login
+{
+background-size : 100%;
+background-position : 0px 80px;
+background-repeat : no-repeat;
+opacity : 0.8
+}
+
+#signupform{
+background : url('/static/images/bg_texture.png');
+color : white;
+}
+
+
+label[for="quantity"] {
+  width: 30px;
+}
+
+.btn-success {
+  width: 100px;
+}
+
+
+.table-custom {
+  background-color: #f5f5f5; /* set background color */
+  color: #333333; /* set text color */
+}
+
+
+

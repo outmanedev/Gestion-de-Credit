@@ -1,0 +1,33 @@
+{% extends 'adminhome.html' %}
+
+{% block main %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid orange;">Modifier Crédits</h5>
+        <div class="container-fluid">
+            <form method="POST">
+                {% csrf_token %}
+           
+                <div class="form-group">
+                    <label for="id_name">Nom:</label>
+                    <input type="text" id="id_name" class="form-control" value="{{ client.name }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="id_prenom">Prénom:</label>
+                    <input type="text" id="id_prenom" class="form-control" value="{{ client.prenom }}" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="id_credits">Crédits:</label>
+                    <input type="text" id="id_credits" name="credits" class="form-control" value="{{ client.credits }}">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                    <a href="{% url 'credits_list' %}" class="btn btn-secondary">Annuler</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
