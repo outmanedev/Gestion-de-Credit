@@ -26,7 +26,7 @@ Mot de passe : 010203.
 # Migrations
  Executer les commanedes suivantes:
  
- python manage.py maekmigrations
+ python manage.py makemigrations
  
  python manage.py migrate
  # Lancer l'application
