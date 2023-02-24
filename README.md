@@ -1,5 +1,5 @@
 # Gestion-de-Credit
- E-épicerie est une application Web de gestion de crédit pour une épicerie, cette application aidant les épiciers à gérer les crédits des clients de manière plus efficace. Tels que les transactions de crédit avec les clients qui souhaitent acheter des produits sans payer immédiatement en utilisant de l’argent liquide ou par crédit.
+ E-épicerie est une application Web de gestion de crédit pour une épicerie, cette application aidant les épiciers à gérer les crédits des clients de manière plus efficace. Tels que les transactions de crédit avec les clients qui souhaitent acheter des produits sans payer immédiatement en utilisant l'option de crédit.
 # Installation
 
 a. Installer Django : on a installé Django en utilisant pip, 
