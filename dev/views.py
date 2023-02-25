@@ -19,14 +19,14 @@ import logging
 def home(request):
     return render(request, 'home.html')
 
-def index(request):
+def mainpage(request):
     return render(request, 'nav.html')
 
 
 def main(request):
     data = Carousel.objects.all()
     dic = {'data':data}
-    return render(request, 'index.html', dic)
+    return render(request, 'mainpage.html', dic)
 
 # dashborad
 
