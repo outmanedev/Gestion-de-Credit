@@ -9,11 +9,11 @@ python -m pip install django
 
 b. Créer un projet : en exécutant la commande suivante dans le terminal :
 
-django-admin start project (nom de projet)
+django-admin startproject (nom de projet)
 
 c. Créer une application en exécutant la commande suivante dans le terminal :
 
-django-admin start project (nom de l'application)
+django-admin startapp (nom de l'application)
 
 d. La configuration des templates : La configuration des templates et du dossier statique
 (ou dossier des fichiers statiques) est une étape importante dans la création d’une application
